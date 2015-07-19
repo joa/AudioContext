@@ -94,19 +94,19 @@ AudioContext.plus = function ()
 		isConnected: function () { return this.connected; }
 	};
 
-	var getOrCreateConnections = function ( inputNode )
+	var getOrCreateConnections = function ( outputNode )
 	{
-		var connections = outgoingMap[inputNode.hash];
+		var connections = outgoingMap[outputNode.hash];
 		if( !connections )
-			connections = outgoingMap[inputNode.hash] = [];
+			connections = outgoingMap[outputNode.hash] = [];
 		return connections;
 	};
 
-	var getConnections = function ( inputNode )
+	var getConnections = function ( outputNode )
 	{
-		var connections = outgoingMap[inputNode.hash];
+		var connections = outgoingMap[outputNode.hash];
 		if( !connections )
-			throw new Error( "No connections registered for " + inputNode );
+			throw new Error( "No connections hashed for " + outputNode );
 		return connections;
 	};
 
