@@ -15,6 +15,8 @@
  *
  * @author André Michelle andre.michelle@gmail.com
  */
+(function(){
+var AudioContext = window.AudioContext || window.webkitAudioContext;
 
 AudioContext.plus = function ()
 {
@@ -138,3 +140,4 @@ AudioContext.plus = function ()
 	}
 	return context;
 };
+})();
